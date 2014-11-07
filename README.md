@@ -1,4 +1,4 @@
-spatiocyte.org
-==============
+Spatiocyte website
+==================
 
-Spatiocyte
+This is the source for spatiocyte.org
