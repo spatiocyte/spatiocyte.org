@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+      Spatiocyte: a lattice-based particle simulator
+    </title>
+    <meta name="description" content="Lattice-based stochastic particle simulator" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/magnific.css">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <h4>
+      <object data="img/logo.svg" type="image/svg+xml">
+      </object>
+      <a href="https://github.com/ecell/spatiocyte" target="_blank">
+        Spatiocyte
+      </a>
+      <span>
+        <span class="dash">
+          —
+        </span>
+        A lattice-based particle simulator
+      </span>
+    </h4>
+    <div class="banner">
+      <ul>
+        <li style="background-image: url('img/spectrin.jpg');">
+          <h1>
+            Multi-algorithm Simulation.
+          </h1>
+          <p>
+            Simulate with mass action, Gillespie Next-Reaction and lattice-based particle diffusion and reaction algorithms simultaneously.
+          </p>
+          <a class="btn" href="https://github.com/ecell/spatiocyte/blob/master/examples/ode-snrp-particle/ode-snrp-particle.py" target="_blank">
+            Example Model
+          </a>
+        </li>
+        <li style="background-image: url('img/3D.jpg');">
+          <h1>
+            3D Diffusion and Reaction.
+          </h1>
+          <p>
+            Three-dimensional diffusion and reaction in a cubic volume.
+          </p>
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=mP3qCKWTSK8">
+            View Movie
+          </a>
+        </li>
+        <li style="background-image: url('img/2D.jpg');">
+          <h1>
+            2D Diffusion and Reaction.
+          </h1>
+          <p>
+            Two-dimensional diffusion and clustering reaction on a planar surface.
+          </p>
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=pafNxDhVLy4">
+            View Movie
+          </a>
+        </li>
+        <li style="background-image: url('img/1D.jpg');">
+          <h1>
+            1D Diffusion and Reaction.
+          </h1>
+          <p>
+            One-dimensional random walk on a filament.
+          </p>
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=hlC0zTgRlAI">
+            View Movie
+          </a>
+        </li>
+        <li style="background-image: url('img/particle_tracking.jpg');">
+          <h1>
+            Particle tracking with fluorescent tags.
+          </h1>
+          <p>
+            Individual particle tracking across different states with fluorescent tagging.
+          </p>
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=FtffUhM546Q">
+            View Movie
+          </a>
+        </li>
+        <li style="background-image: url('img/microtubule.jpg');">
+          <h1>
+            Render with Blender.
+          </h1>
+          <p>
+            Create beautifully rendered simulation movies with Blender.
+          </p>
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=6cXKIBTBfyw">
+            View Movie
+          </a>
+        </li>
+        <li style="background-image: url('img/min3.jpg');">
+          <h1>
+            Scriptable, yet Fast.
+          </h1>
+          <p>
+            Modeling, simulation and logging are Python scriptable, but simulation speed is uncompromised thanks to Spatiocyte's C++ core algorithm modules.
+          </p>
+          <a class="btn" href="#howto">
+            Get Spatiocyte
+          </a>
+        </li>
+        <li style="background-image: url('img/min2.jpg');">
+          <h1>
+            Open-source.
+          </h1>
+          <p>
+            Spatiocyte software and documentation are publicly hosted on GitHub.
+          </p>
+          <a class="btn" href="https://github.com/ecell/spatiocyte" target="_blank">
+            Contribute
+          </a>
+        </li>
+        <li style="background-image: url('img/min1.jpg');">
+          <h1>
+            Software Support.
+          </h1>
+          <p>
+            Contact us if you have any issues with Spatiocyte.
+          </p>
+          <a class="btn" href="http://groups.google.com/d/forum/spatiocyte-users?hl=en" target="_blank">
+            Join User Group
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="features">
+      <ul class="wrap">
+        <li class="responsive">
+          <b>
+            1D, 2D and 3D diffusion
+          </b>
+          <p>
+            Molecules can diffuse and react in filament (1D), membrane (2D) and cytosolic (3D) compartments.
+          </p>
+        </li>
+        <li class="keyboard">
+          <b>
+            Molecular crowding
+          </b>
+          <p>
+            The effects of intracellular molecular crowding can be studied since each diffusing molecule has spatial dimensions.
+          </p>
+        </li>
+        <li class="height">
+          <b>
+            Multi-algorithm
+          </b>
+          <p>
+            Run multi-algorithm simulation with Gillespie next-reaction, mass-action and lattice-based particle reaction-diffusion methods simultaneously.
+          </p>
+        </li>
+        <li class="browser">
+          <b>
+            Python script
+          </b>
+          <p>
+            Build and run models, log and plot data in Python. Simulation speed, however, is uncompromised thanks to C++ core algorithm modules.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div id="howto" class="how wrap">
+      <h2>
+        Spatiocyte Quick Start
+      </h2>
+      <ol>
+
+        <li>
+          <div>
+            <h3>
+              Get and run the install script
+            </h3>
+            <p>
+              Spatiocyte runs stably on Ubuntu Linux, whereas on Mac OS X Yosemite and Windows systems, it is still experimental. On a fresh Ubuntu or a Mac OS X system, Spatiocyte requires several additional packages to run. To install these packages and Spatiocyte, open a terminal and execute the following instructions:
+            </p>
+          </div>
+          <h5>
+            Ubuntu Linux:
+          </h5>
+          <pre>
+$ wget https://raw.githubusercontent.com/ecell/spatiocyte/master/install-spatiocyte-ubuntu.sh
+$ sh -x install-spatiocyte-ubuntu.sh 
+</pre>
+          <h5>
+            Mac OS X:
+          </h5>
+          <pre>
+$ curl -O https://raw.githubusercontent.com/ecell/spatiocyte/master/install-spatiocyte-mac.sh
+$ sh -x install-spatiocyte-mac.sh 
+</pre>
+          <p>
+            Enter your password when requested since some packages require the administrator privilege to install. If you have any issues during install, post the error messages to the 
+            <a href="https://groups.google.com/forum/?hl=en#!forum/spatiocyte-users" target="_blank">
+              Spatiocyte Users
+            </a>
+            forum. On Mac, the installation script will take a longer time to finish executing because more packages need to be downloaded. We can use Blender to render simulation snapshots and VLC to view movies of the snapshots. Since the installation script does not install them on Mac, you can download and install them yourself from 
+            <a href="http://www.blender.org/" target="_blank">
+              http://www.blender.org/
+            </a>
+            and 
+            <a href="http://www.videolan.org/" target="_blank">
+              http://www.videolan.org/
+            </a>
+            .
+          </p>
+
+          <h5>
+            Windows (with Docker container):
+          </h5>
+
+          <ol type="i">
+            <li>Install the latest release of <a href="https://www.docker.com/toolbox">Docker toolbox for Windows</a> and <a href="http://www.uvnc.com/">UltraVNC</a>.
+              <br>
+              If you are using Windows 10 Pro or Enterprise 64-bit, then you can install <a href="https://www.docker.com/products/docker#/windows">Docker for Windows</a> and <b>Kitematic</b>
+              instead of <b>Docker toolbox for Windows</b>. <b>Kitematic</b> can be downloaded from Dashboard menu after installing <b>Docker for Windows</b>.
+            </li>
+            <li>Run <b>Kitematic</b> from your desktop or start menu.
+            </li>
+            <li>Search <b>Spatiocyte</b> and create container for <b>ecell/spatiocyte</b>.
+            <br>
+            <img src="img/kitematic1.png" alt="ecell/spatiocyte">
+            </li>
+            <li>Clic <b>EXEC</b> button and go into the Spatiocyte container.
+            <img class="wrap" src="img/kitematic2.png" alt="go into container">
+            </li>
+            <li>Issue the following command in the Spatiocyte container. 
+            <pre>
+USER=root vncserver :1 -geometry 1360x768 -depth 24
+</pre>
+            </li>
+
+            <li> Connect Docker container <b>ACCESS URL</b> written in Kitematic <b>IP & PORTS</b> panel with UltraVNC. The password for this VNC login is <b>password</b>.
+            <img class="wrap" src="img/kitematic3.png" alt="ACCESS URL for VNC">
+            <img src="img/ultravnc.png" alt="UltraVNC">
+            </li>
+          </ol>
+        </li>
+
+
+        <li>
+          <div>
+            <h3>
+              Test the installation
+            </h3>
+            <p>
+              Close and reopen the terminal for the installation to take effect. To test if the installation is successful, run the following command in the terminal:
+            </p>
+          </div>
+          <pre>
+$ ecell3-session-monitor
+</pre>
+          <p>
+            The above command will open the E-Cell Session Monitor, as shown below. You have now sucessfully installed Spatiocyte! If for some reason, the Session Monitor does not come up, please post the error message to the 
+            <a href="https://groups.google.com/forum/?hl=en#!forum/spatiocyte-users" target="_blank">
+              Spatiocyte Users
+            </a>
+            forum.
+          </p>
+          <img class="wrap" src="img/session_monitor.jpg" alt="E-Cell Session Monitor">
+        </li>
+        <li>
+          <div>
+            <h3>
+              Run a model
+            </h3>
+            <p>
+              Now try running a simple 1D diffusion Python model available in the 
+              <a href="https://github.com/ecell/spatiocyte/tree/master/examples/1D" target="_blank">
+                examples/1D
+              </a>
+              directory:
+            </p>
+          </div>
+          <pre>
+$ cd $HOME/wrk/spatiocyte/examples/1D
+$ ecell3-session 1D.py
+</pre>
+          <p>
+            The simulator will terminate itself once the simulation has ended. To view the simulated molecules, run the Spatiocyte Visualizer by issuing:
+          </p>
+          <pre>
+$ spatiocyte
+</pre>
+          <p>
+            More models can be found under the 
+            <a href="https://github.com/ecell/spatiocyte/tree/master/examples" target="_blank">
+              examples directory
+            </a>
+            . To run them, follow the instructions in the README file in the directory.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Any issues? Contact us!
+            </h3>
+            <p>
+              If you have any issues or questions about Spatiocyte, 
+              <a href="https://groups.google.com/forum/?hl=en#!forum/spatiocyte-users" target="_blank">
+                message
+              </a>
+              us. Spatiocyte documentation can be found 
+              <a href="http://spatiocyte.readthedocs.org/en/latest/intro.html" target="_blank">
+                here
+              </a>
+              .
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div id="example" class="how wrap">
+      <h2>
+        Build a simple 3D reaction-diffusion model
+      </h2>
+      <ol>
+        <li>
+          <div>
+            <h3>
+              Specify the stepper and voxel radius
+            </h3>
+            <p>
+              To build a simple 3D model, open a text editor and add the Python scripts as provided in the code boxes below. Each Spatiocyte model requires the SpatiocyteStepper. It advances the simulation in an event-driven manner. The radius of the hexagonal close-packed lattice voxels can be set in the SpatiocyteStepper using the VoxelRadius property. In the code below, we have set the radius to 4.4 nm.
+            </p>
+          </div>
+          <pre>
+sim = theSimulator.createStepper('SpatiocyteStepper', 'SS')
+sim.VoxelRadius = 4.4e-9
+theSimulator.rootSystem.StepperID = 'SS'
+</pre>
+          <p>
+            The memory usage increases linearly with the number of voxels. In a 64-bit system, each voxel typically takes up 108 bytes of memory. The number of voxels with radius, r in a volume, V is given by V/(4r
+            <sup>
+              3
+            </sup>
+            2
+            <sup>
+              0.5
+            </sup>
+            ). In each compartment, the StepperID must be set to the SpatiocyteStepper ID. Here we only have the root compartment, rootSystem and we set its StepperID to 'SS' which is the SpatiocyteStepper ID given in the first line.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Define compartment geometry
+            </h3>
+            <p>
+              We will use a cuboid compartment geometry for this model. The GEOMETRY variable of a volume compartment specifies one of the six supported geometric primitives: cuboid (‘0’), ellipsoid (‘1’), cylinder (‘2’), rod (‘3’), pyramid (‘4’) and erythrocyte (‘5’). More complex forms can be constructed using a combination of these primitives. Compartments without the GEOMETRY definition is set to the cuboid form since the default value is ‘0’.
+            </p>
+          </div>
+          <pre>
+theSimulator.createEntity('Variable', 'Variable:/:GEOMETRY').Value = 0
+theSimulator.createEntity('Variable', 'Variable:/:LENGTHX').Value = 2.5e-7
+theSimulator.createEntity('Variable', 'Variable:/:LENGTHY').Value = 2.5e-7
+theSimulator.createEntity('Variable', 'Variable:/:LENGTHZ').Value = 2.5e-7
+</pre>
+          <p>
+            The three variables LENGTH[X, Y, Z] can specify the compartment lengths in the directions of [x, y, z]-axes, respectively. In the example above, the lengths are set to 250 nm. More information about the LENGTH variable definition can be found in the 
+            <a href="http://spatiocyte.readthedocs.org/en/latest/modules.html#length-x-y-z" target="_blank">
+              documentation
+            </a>
+            .
+          </p>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Assign compartment boundary types
+            </h3>
+            <p>
+              When a volume compartment has the cuboid geometry, as in our example model, the boundary type can be specified using [XY, XZ, YZ]PLANE variables. The boundary type can be reflective (‘0’), periodic (‘1’) or semi-periodic (‘2’). A semi-periodic boundary allows nonHD molecules to move unidirectionally from one boundary to the other. We set all the boundaries to 1 to make them periodic:
+            </p>
+          </div>
+          <pre>
+theSimulator.createEntity('Variable', 'Variable:/:XYPLANE').Value = 1
+theSimulator.createEntity('Variable', 'Variable:/:XZPLANE').Value = 1
+theSimulator.createEntity('Variable', 'Variable:/:YZPLANE').Value = 1
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Set species and their initial numbers
+            </h3>
+            <p>
+              Every compartment must have a VACANT variable that represents the 'species' of empty voxels within the compartment. We would like to add the reaction A + B ->
+              C + C in the model, with A and B species each made up of 500 molecules initially. These three variables can be declared as below:
+            </p>
+          </div>
+          <pre>
+theSimulator.createEntity('Variable', 'Variable:/:VACANT')
+theSimulator.createEntity('Variable', 'Variable:/:A').Value = 500
+theSimulator.createEntity('Variable', 'Variable:/:B').Value = 500
+theSimulator.createEntity('Variable', 'Variable:/:C').Value = 0
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Populate non-zero species
+            </h3>
+            <p>
+              We must populate the molecules of A and B species in the compartment before the simulation is started because they initially have non-zero numbers. We populate them using the MoleculePopulateProcess.
+            </p>
+          </div>
+          <pre>
+populator = theSimulator.createEntity('MoleculePopulateProcess', 'Process:/:pop')
+populator.VariableReferenceList = [['_', 'Variable:/:A']]
+populator.VariableReferenceList = [['_', 'Variable:/:B']]
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Fix the diffusion property of each species
+            </h3>
+            <p>
+              We are going to diffuse all three species, A, B and C in the compartment with a diffusion coefficient of 0.1 um
+              <sup>
+                2
+              </sup>
+              /s. We specify the diffusion property of each species with the DiffusionProcess:
+            </p>
+          </div>
+          <pre>
+diffuser = theSimulator.createEntity('DiffusionProcess', 'Process:/:diffuseA')
+diffuser.VariableReferenceList = [['_', 'Variable:/:A']]
+diffuser.D = 1e-13
+
+diffuser = theSimulator.createEntity('DiffusionProcess', 'Process:/:diffuseB')
+diffuser.VariableReferenceList = [['_', 'Variable:/:B']]
+diffuser.D = 1e-13
+
+diffuser = theSimulator.createEntity('DiffusionProcess', 'Process:/:diffuseC')
+diffuser.VariableReferenceList = [['_', 'Variable:/:C']]
+diffuser.D = 1e-13
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Specify the reaction
+            </h3>
+            <p>
+              Next, we specify the reaction A + B ->
+              C + C using the DiffusionInfluencedReaction process. We set the reaction probability, p to unity, which means a C molecule will be created whenever an A and a B molecule collide.
+            </p>
+          </div>
+          <pre>
+binder = theSimulator.createEntity('DiffusionInfluencedReactionProcess', 'Process:/:reaction1')
+binder.VariableReferenceList = [['_', 'Variable:/:A','-1']]
+binder.VariableReferenceList = [['_', 'Variable:/:B','-1']]
+binder.VariableReferenceList = [['_', 'Variable:/:C','1']]
+binder.VariableReferenceList = [['_', 'Variable:/:C','1']]
+binder.p = 1
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Set the logger for Spatiocyte visualizer
+            </h3>
+            <p>
+              We can use the VisualizationLogProcess to log the coordinates of the diffusing species at specified intervals or at the shortest stepper intervals (default). The coordinates will be saved in the file VisualLog.dat in binary format. The Spatiocyte Visualizer can load the log file to display the molecules in 3D while the simulation is running or after it has ended.
+            </p>
+          </div>
+          <pre>
+logger = theSimulator.createEntity('VisualizationLogProcess', 'Process:/:logger')
+logger.VariableReferenceList = [['_', 'Variable:/:A']]
+logger.VariableReferenceList = [['_', 'Variable:/:B']]
+logger.VariableReferenceList = [['_', 'Variable:/:C']]
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Set molecule coordinates logger
+            </h3>
+            <p>
+              The coordinates of the molecules can also be saved in csv format with CoordinateLogProcess:
+            </p>
+          </div>
+          <pre>
+coord = theSimulator.createEntity('CoordinateLogProcess', 'Process:/:coord')
+coord.VariableReferenceList = [['_', 'Variable:/:A']]
+coord.VariableReferenceList = [['_', 'Variable:/:B']]
+coord.VariableReferenceList = [['_', 'Variable:/:C']]
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Specify the model run time
+            </h3>
+            <p>
+              Finally, we need to tell the simulator how long the model should be run. Here, we will run it for 0.08 s.
+            </p>
+          </div>
+          <pre>
+run(0.08)
+</pre>
+        </li>
+        <li>
+          <div>
+            <h3>
+              Run the model
+            </h3>
+            <p>
+              Save the file as 3D.py and run the model in a terminal by issuing,
+            </p>
+          </div>
+          <pre>
+$ ecell3-session 3D.py
+</pre>
+          <p>
+            We can visualize the simulation with
+          </p>
+          <pre>
+$ spatiocyte
+</pre>
+          <p>
+            The above instruction will start the Spatiocyte visualizer, which will load the VisualLog.dat file and display the molecule positions in 3D. The short cut keys to manipulate the visualizer are provided 
+            <a href="http://spatiocyte.readthedocs.org/en/latest/modules.html#spatiocytevisualizer" target="_blank">
+              here.
+            </a>
+            The complete model file can be downloaded 
+            <a href="3D.py" target="_blank">
+              here.
+            </a>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <div id="references" class="how wrap">
+      <h2>
+        References
+      </h2>
+      <ol>
+        <li>
+          Chew, W.-X., Kaizu, K., Watabe, M., Muniandy, S. V., Takahashi, K. & Arjunan, S. N. V. (2019).
+          <a href="https://arxiv.org/abs/1811.07119" target="_blank">
+            Surface reaction-diffusion kinetics on lattice at the microscopic scale.
+          </a>
+          Physical Review E, In press.
+        </li>
+        <li>
+          Chew, W.-X., Kaizu, K., Watabe, M., Muniandy, S. V., Takahashi, K. & Arjunan, S. N. V. (2018).
+          <a href="https://doi.org/10.1103/PhysRevE.98.032418" target="_blank">
+            Reaction-diffusion kinetics on lattice at the microscopic scale.
+          </a>
+          Physical Review E, 98: 032418.
+        </li>
+        <li>
+          Arjunan, S. N. V. & Takahashi, K. (2017).
+          <a href="http://dx.doi.org/10.1007/978-1-4939-7015-5_16" target="_blank">
+            Multi-algorithm particle simulations with Spatiocyte.
+          </a>
+          Methods in Molecular Biology, 1611: 219-236
+        </li>
+        <li>
+          Watabe, M., Arjunan, S. N. V., Fukushima, S., Iwamoto, K., Kozuka, J., Matsuoka, S., Shindo, Y., Ueda, M. & Takahashi, K. (2015).
+          <a href="http://dx.doi.org/10.1371/journal.pone.0130089" target="_blank">
+            A Computational Framework for Bioimaging Simulation.
+          </a>
+          PLoS ONE 10(7): e0130089
+        </li>
+        <li>
+          Shimo, H., Arjunan, S.N.V., Machiyama, H., Nishino, T., Suematsu, M., Fujita, H., Tomita, M. & Takahashi, K. (2015).
+          <a href="http://dx.doi.org/10.1371/journal.pcbi.1004210" target="_blank">
+            Particle Simulation of Oxidation Induced Band 3 Clustering in Human Erythrocytes.
+          </a>
+          PLoS Computational Biology, 11(6): e1004210.
+        </li>
+        <li>
+          Arjunan, S. N. V. (2013). 
+          <a href="https://doi.org/10.1007/978-1-4614-6157-9_4" target="_blank">
+            A guide to modeling reaction–diffusion of molecules with the E-Cell system,
+          </a>
+           in: E-Cell System: basic concepts and applications, Springer, pp. 43–62. The latest version of the user guide can be found at 
+          <a href="http://spatiocyte.readthedocs.org/en/latest/intro.html" target="_blank">
+            http://spatiocyte.readthedocs.org/en/latest/intro.html
+          </a>
+        </li>
+        <li>
+          Arjunan, S. N. V., & Tomita, M. (2010). 
+          <a href="http://dx.doi.org/10.1007/s11693-009-9047-2" target="_blank">
+            A new multicompartmental reaction-diffusion modeling method links transient membrane attachment of E. coli MinE to E-ring formation.
+          </a>
+          Systems and Synthetic Biology, 4(1), 35–53
+        </li>
+        <li>
+          Arjunan, S. N. V., & Tomita, M. (2009). 
+          <a href="http://precedings.nature.com/documents/3526/version/1/files/npre20093526-1.pdf" target="_blank">
+            Modeling reaction-diffusion of molecules on surface and in volume spaces with the E-Cell System.
+          </a>
+          International Journal of Computer Science and Information Security, 3(1), 211–216
+        </li>
+      </ol>
+    </div>
+    <script src="script/jquery-latest.min.js">
+    </script>
+    <script src="script/jquery.event.move.js">
+    </script>
+    <script src="script/jquery.event.swipe.js">
+    </script>
+    <script src="script/unslider.js">
+    </script>
+    <script src="script/magnific.js">
+    </script>
+    <script>
+      $('.banner').unslider({
+        fluid: true,
+        keys: true,
+        dots: true,
+        speed: 300
+      }
+                           );
+      
+      //  Find any element starting with a # in the URL
+      //  And listen to any click events it fires
+      $('a[href^="#"]').click(function() {
+        //  Find the target element
+        var target = $($(this).attr('href'));
+        
+        //  And get its position
+        var pos = target.offset();
+        // fallback to scrolling to top || {left: 0, top: 0};
+        
+        //  jQuery will return false if there's no element
+        //  and your code will throw errors if it tries to do .offset().left;
+        if(pos) {
+          //  Scroll the page
+          $('html, body').animate({
+            scrollTop: pos.top,
+            scrollLeft: pos.left
+          }, 1000);
+        }
+        
+        //  Don't let them visit the url, we'll scroll you there
+        return false;
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false
+        }
+                                                                     );
+      }
+                       );
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;
+        i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)}
+          ,i[r].l=1*new Date();
+        a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];
+        a.async=1;
+        a.src=g;
+        m.parentNode.insertBefore(a,m)
+      }
+      )(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-56513360-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
